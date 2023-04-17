@@ -104,6 +104,7 @@ app.layout=layout
               [Input('dropdown', 'value')])
 def update_spyder(input_value):
     org=data_15[data_15['Organizations'].str.contains(input_value)]
+    # Use similar method to search through documentidentifier for lithium
     org = org[['ActualThemes','V2Tone']]
     fig=px.line_polar(org,r='V2Tone',theta='ActualThemes',line_close=True,color_discrete_sequence=px.colors.sequential.Plasma_r)
     return fig
